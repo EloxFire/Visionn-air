@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import { StatusBar } from 'expo-status-bar'
 import { NavigationContainer } from '@react-navigation/native'
 import { useFonts } from 'expo-font';
@@ -23,18 +23,18 @@ export default function App() {
     await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT_UP);
   }
 
-  // SystemUI.setBackgroundColorAsync(colors.dark_green);
+  SystemUI.setBackgroundColorAsync(colors.dark_green);
 
   if (!loaded) {
     return null;
   }
 
   return (
-    <View style={{ zIndex: -2 }}>
+    <>
       <StatusBar style='light' />
       <NavigationContainer>
         <NavigationStack />
       </NavigationContainer>
-    </View>
+    </>
   );
 }

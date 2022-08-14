@@ -5,5 +5,7 @@ export const commonStyles = {
   view: {
     paddingTop: StatusBar.currentHeight,
     paddingHorizontal: 30,
+    backgroundColor: colors.dark_green,
+    height: '100%'
   }
 }
