@@ -1,20 +1,40 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useEffect } from 'react'
+import { StatusBar } from 'expo-status-bar'
+import { NavigationContainer } from '@react-navigation/native'
+import { useFonts } from 'expo-font';
+import * as SystemUI from 'expo-system-ui';
+import * as ScreenOrientation from 'expo-screen-orientation';
+import NavigationStack from './src/components/navigation/StackNavigation';
+import { colors } from './src/scripts/consts';
+import { View } from 'react-native'
 
 export default function App() {
+
+  const [loaded] = useFonts({
+    GilroyBold: require('./assets/fonts/Gilroy-Bold.ttf'),
+    Gilroy: require('./assets/fonts/Gilroy-Regular.ttf'),
+  });
+
+  useEffect(() => {
+    changeScreenOrientation();
+  }, []);
+
+  async function changeScreenOrientation() {
+    await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT_UP);
+  }
+
+  // SystemUI.setBackgroundColorAsync(colors.dark_green);
+
+  if (!loaded) {
+    return null;
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={{ zIndex: -2 }}>
+      <StatusBar style='light' />
+      <NavigationContainer>
+        <NavigationStack />
+      </NavigationContainer>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
