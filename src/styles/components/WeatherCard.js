@@ -5,17 +5,23 @@ export const weatherCardStyles = {
   card: {
     marginTop: RFPercentage(2),
     backgroundColor: colors.white,
-    height: RFPercentage(12),
+    height: RFPercentage(22),
     borderRadius: RFPercentage(2),
     padding: 10,
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center",
+    alignItems: "space-between",
 
     title: {
       fontFamily: "Gilroy",
       fontSize: RFPercentage(2),
+    },
+
+    icon: {
+      marginTop: RFPercentage(1),
+      width: RFPercentage(5.5),
+      height: RFPercentage(5.5),
     },
 
     number: {
@@ -38,12 +44,33 @@ export const weatherCardStyles = {
     },
 
     rightSide: {
-      width: '60%',
+      width: '70%',
       height: '100%',
       display: "flex",
-      flexDirection: "column",
+      flexDirection: "row",
+      alignItems: "center",
       justifyContent: "center",
-      alignItems: "flex-start"
+
+      column: {
+        width: '50%',
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "space-around",
+        height: '100%',
+        // backgroundColor: 'blue'
+      },
+
+      info: {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+
+        value: {
+          fontSize: RFPercentage(2.5),
+          fontFamily: "GilroyBold",
+        }
+      }
     }
   }
 }

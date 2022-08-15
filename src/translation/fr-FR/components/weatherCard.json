@@ -2,7 +2,22 @@
   "weatherCard": {
     "temperature": "Température",
     "humidity": "Humidité : ",
+    "pressure": "Pression : ",
     "windSpeed": "Vent : ",
-    "windDirection": "Direction : "
+    "windDirection": "Direction : ",
+    "descriptions": {
+      "01d": "Ciel dégagé",
+      "01n": "Nuit claire",
+      "02d": "Quelques nuages",
+      "02n": "Quelques nuages",
+      "03d": "Nuages éparses",
+      "04d": "Nuages fragmentés",
+      "09d": "Averses",
+      "10d": "Pluie",
+      "10n": "Pluie",
+      "11d": "Orages",
+      "13d": "Neige",
+      "50d": "Brouillard"
+    }
   }
 }

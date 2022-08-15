@@ -10,7 +10,7 @@ import WeatherCard from '../components/WeatherCard'
 import { colors } from '../scripts/consts'
 import { RFPercentage } from 'react-native-responsive-fontsize'
 
-export default function Home() {
+export default function Home({ navigation }) {
 
   const { t } = useTranslation()
 
@@ -22,6 +22,7 @@ export default function Home() {
   const [currentHumidity, setCurrentHumidity] = useState(0);
   const [currentWindSpeed, setCurrentWindSpeed] = useState(0);
   const [currentWindDirection, setCurrentWindDirection] = useState(0);
+  const [weatherIcon, setWeatherIcon] = useState('01d');
 
   useEffect(() => {
     getData()
@@ -39,6 +40,7 @@ export default function Home() {
         setCurrentHumidity(response.data.data.current.weather.hu);
         setCurrentWindSpeed(response.data.data.current.weather.ws);
         setCurrentWindDirection(getCardinalDirection(response.data.data.current.weather.wd));
+        setWeatherIcon(response.data.data.current.weather.ic);
       }).catch((error) => {
         console.log(error.message);
       })
@@ -75,6 +77,7 @@ export default function Home() {
           humidity={currentHumidity}
           windSpeed={currentWindSpeed}
           windDir={currentWindDirection}
+          icon={weatherIcon}
         />
       </View>
 
@@ -87,7 +90,7 @@ export default function Home() {
         <Text style={homeStyles.content.subtitle}>{t('home.titles.more.sub')}</Text>
 
         <View style={{ marginTop: RFPercentage(2) }}>
-          <TouchableOpacity style={{ marginTop: RFPercentage(1) }}>
+          <TouchableOpacity onPress={() => navigation.navigate('IQA')} style={{ marginTop: RFPercentage(1) }}>
             <Text style={homeStyles.content.link}>{t('home.titles.more.links.iqa')}</Text>
           </TouchableOpacity>
           <TouchableOpacity style={{ marginTop: RFPercentage(1) }}>

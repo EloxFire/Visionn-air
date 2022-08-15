@@ -6,7 +6,7 @@
         "sub": "À l'instant | {{city}}"
       },
       "weather": {
-        "main": "Météo",
+        "main": "Conditions météo",
         "sub": "À l'instant | {{city}}"
       },
       "more": {
