@@ -1,0 +1,8 @@
+{
+  "weatherCard": {
+    "temperature": "Température",
+    "humidity": "Humidité : ",
+    "windSpeed": "Vent : ",
+    "windDirection": "Direction : "
+  }
+}

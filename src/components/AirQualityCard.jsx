@@ -32,7 +32,7 @@ export default function AirQualityCard({ iqa, main_polluent_name }) {
       </View>
       <View style={airQualityCardStyle.card.rightSide}>
         <Text style={[airQualityCardStyle.card.quality, iqa > 100 && iqa <= 150 && { fontSize: RFPercentage(2.8) }]}>
-          {iqa === "" ? <ActivityIndicator size="large" color={colors.dark_green} /> : iqa}
+          {iqa === "" && <ActivityIndicator size="large" color={colors.dark_green} />}
           {iqa <= 50 && iqa !== "" && t('airQualityCard.values.good')}
           {iqa > 50 && iqa <= 100 && t('airQualityCard.values.moderate')}
           {iqa > 100 && iqa <= 150 && t('airQualityCard.values.unhealthyForSensitiveGroups')}
