@@ -9,6 +9,12 @@ export const homeStyles = {
       fontSize: RFPercentage(3),
       color: colors.white,
       fontFamily: "GilroyBold"
+    },
+
+    subtitle: {
+      fontSize: RFPercentage(2),
+      color: colors.white,
+      fontFamily: "Gilroy"
     }
   }
 }

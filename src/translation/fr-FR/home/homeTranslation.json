@@ -1,6 +1,14 @@
 {
   "home": {
-    "title": "Qualité de l'air en France",
-    "subtitle": "Aujourd'hui"
+    "titles": {
+      "airQuality": {
+        "main": "Qualité de l'air",
+        "sub": "Aujourd'hui | {{city}}"
+      },
+      "weather": {
+        "main": "Météo",
+        "sub": "Aujourd'hui | {{city}}"
+      }
+    }
   }
 }

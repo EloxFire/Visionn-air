@@ -1,0 +1,41 @@
+{
+  "airQualityCard": {
+    "indicator": "IQA",
+    "values": {
+      "good": "Bon",
+      "moderate": "Moyen",
+      "unhealthyForSensitiveGroups": "Mauvais pour les groupes sensibles",
+      "unhealthy": "Mauvais",
+      "veryUnhealthy": "Très mauvais",
+      "hazardous": "Dangereux"
+    },
+    "mainPolluentTitle": "Polluant principal : ",
+    "mainPolluentSubtitle": "Concentration :",
+    "mainPolluents": {
+      "pm25": {
+        "short": "PM2.5",
+        "long": "Particules de plus de 2.5 micromètres"
+      },
+      "pm10": {
+        "short": "PM10",
+        "long": "Particules de plus de 10 micromètres"
+      },
+      "o3": {
+        "short": "O3",
+        "long": "Ozone"
+      },
+      "no2": {
+        "short": "NO2",
+        "long": "Dioxyde d'azote"
+      },
+      "so2": {
+        "short": "SO2",
+        "long": "Dioxyde de soufre"
+      },
+      "co": {
+        "short": "CO",
+        "long": "Monoxyde de carbone"
+      }
+    }
+  }
+}
