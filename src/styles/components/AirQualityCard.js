@@ -1,9 +1,10 @@
 import { RFPercentage } from "react-native-responsive-fontsize";
+import { colors } from "../../scripts/consts";
 
 export const airQualityCardStyle = {
   card: {
     marginTop: RFPercentage(2),
-    // backgroundColor: "#fff",
+    backgroundColor: colors.white,
     height: RFPercentage(12),
     borderRadius: RFPercentage(2),
     padding: 10,

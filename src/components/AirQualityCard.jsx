@@ -25,10 +25,10 @@ export default function AirQualityCard({ iqa, main_polluent_name }) {
 
 
   return (
-    <View style={[airQualityCardStyle.card, { backgroundColor: currentBackgroundColor }]}>
+    <View style={airQualityCardStyle.card}>
       <View style={airQualityCardStyle.card.leftSide}>
         <Text style={airQualityCardStyle.card.title}>{t('airQualityCard.indicator')}</Text>
-        <Text style={airQualityCardStyle.card.number}>{iqa === "" ? <ActivityIndicator size="large" color={colors.dark_green} /> : iqa}</Text>
+        <Text style={[airQualityCardStyle.card.number, { color: currentBackgroundColor }]}>{iqa === "" ? <ActivityIndicator size="large" color={colors.dark_green} /> : iqa}</Text>
       </View>
       <View style={airQualityCardStyle.card.rightSide}>
         <Text style={[airQualityCardStyle.card.quality, iqa > 100 && iqa <= 150 && { fontSize: RFPercentage(2.8) }]}>
@@ -52,6 +52,6 @@ export default function AirQualityCard({ iqa, main_polluent_name }) {
         </Text>
         {/* <Text style={airQualityCardStyle.card.title}>{t('airQualityCard.mainPolluentSubtitle')} {main_polluent_value} {main_polluent_unit}</Text> */}
       </View>
-    </View>
+    </View >
   )
 }
