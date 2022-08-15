@@ -19,7 +19,7 @@ export const weatherCardStyles = {
     },
 
     icon: {
-      marginTop: RFPercentage(1),
+      marginTop: RFPercentage(2.5),
       width: RFPercentage(5.5),
       height: RFPercentage(5.5),
     },
@@ -35,7 +35,7 @@ export const weatherCardStyles = {
     },
 
     leftSide: {
-      width: '30%',
+      width: '40%',
       height: '100%',
       display: "flex",
       flexDirection: "column",
@@ -44,7 +44,7 @@ export const weatherCardStyles = {
     },
 
     rightSide: {
-      width: '70%',
+      width: '60%',
       height: '100%',
       display: "flex",
       flexDirection: "row",

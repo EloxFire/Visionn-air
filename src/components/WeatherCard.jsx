@@ -13,7 +13,6 @@ export default function WeatherCard({ temp, pressure, humidity, windSpeed, windD
     <View style={weatherCardStyles.card}>
       <View style={weatherCardStyles.card.leftSide}>
         <Text style={weatherCardStyles.card.title}>{t(`weatherCard.descriptions.${icon}`)}</Text>
-        {/* <Text style={weatherCardStyles.card.number}>{temp}<Text style={{ fontSize: RFPercentage(3) }}>°C</Text> </Text> */}
         <Image style={weatherCardStyles.card.icon} resizeMode="contain" source={weatherIcons[icon]} />
       </View>
       <View style={weatherCardStyles.card.rightSide}>
