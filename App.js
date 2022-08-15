@@ -6,7 +6,7 @@ import * as SystemUI from 'expo-system-ui';
 import * as ScreenOrientation from 'expo-screen-orientation';
 import NavigationStack from './src/components/navigation/StackNavigation';
 import { colors } from './src/scripts/consts';
-import { View } from 'react-native'
+import './src/translation/i18n'
 
 export default function App() {
 

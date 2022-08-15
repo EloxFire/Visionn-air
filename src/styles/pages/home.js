@@ -1,8 +1,14 @@
 import { colors } from "../../scripts/consts";
+import { RFPercentage } from "react-native-responsive-fontsize";
 
 export const homeStyles = {
-  title: {
-    fontSize: 30,
-    color: colors.white,
+  content: {
+    paddingTop: RFPercentage(3),
+
+    title: {
+      fontSize: RFPercentage(3),
+      color: colors.white,
+      fontFamily: "GilroyBold"
+    }
   }
 }
