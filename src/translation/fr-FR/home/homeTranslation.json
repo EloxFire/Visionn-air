@@ -8,6 +8,15 @@
       "weather": {
         "main": "Météo",
         "sub": "À l'instant | {{city}}"
+      },
+      "more": {
+        "main": "En savoir plus",
+        "sub": "Visionn'air vous donne les clés",
+        "links": {
+          "iqa": "C'est quoi l'IQA ?",
+          "airQuality": "Comment est calculée la qualité de l'air ?",
+          "data": "Quelle est la fréquence de mise à jour des données ?"
+        }
       }
     }
   }

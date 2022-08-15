@@ -15,10 +15,10 @@ export default function WeatherCard({ temp, pressure, humidity, windSpeed, windD
         <Text style={weatherCardStyles.card.number}>{temp}<Text style={{ fontSize: RFPercentage(3) }}>°C</Text> </Text>
       </View>
       <View style={weatherCardStyles.card.rightSide}>
-        <Text>{t('weatherCard.humidity')} {humidity} %</Text>
-        <Text>{t('weatherCard.humidity')} {pressure} hPa</Text>
-        <Text>{t('weatherCard.windSpeed')} {windSpeed} m/s</Text>
-        <Text>{t('weatherCard.windDirection')} {windDir} </Text>
+        <Text style={{ fontSize: RFPercentage(2) }}>{t('weatherCard.humidity')} {humidity} %</Text>
+        <Text style={{ fontSize: RFPercentage(2) }}>{t('weatherCard.humidity')} {pressure} hPa</Text>
+        <Text style={{ fontSize: RFPercentage(2) }}>{t('weatherCard.windSpeed')} {windSpeed} m/s</Text>
+        <Text style={{ fontSize: RFPercentage(2) }}>{t('weatherCard.windDirection')} {windDir} </Text>
       </View>
     </View>
   )

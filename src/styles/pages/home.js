@@ -15,6 +15,12 @@ export const homeStyles = {
       fontSize: RFPercentage(2),
       color: colors.white,
       fontFamily: "Gilroy"
+    },
+
+    link: {
+      fontSize: RFPercentage(2),
+      color: colors.white,
+      fontFamily: "Gilroy"
     }
   }
 }

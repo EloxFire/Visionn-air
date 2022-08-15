@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { View, Text, ActivityIndicator } from 'react-native'
+import { View, Text, ActivityIndicator, TouchableOpacity } from 'react-native'
 import PageHeader from '../components/PageHeader'
 import { commonStyles } from '../styles/commonStyles'
 import { homeStyles } from '../styles/pages/home'
@@ -8,6 +8,7 @@ import AirQualityCard from '../components/AirQualityCard'
 import axios from 'axios'
 import WeatherCard from '../components/WeatherCard'
 import { colors } from '../scripts/consts'
+import { RFPercentage } from 'react-native-responsive-fontsize'
 
 export default function Home() {
 
@@ -77,8 +78,25 @@ export default function Home() {
         />
       </View>
 
-      <View style={homeStyles.content}>
+      <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', marginTop: RFPercentage(3) }}>
+        <View style={{ backgroundColor: colors.white, width: '90%', height: 1, opacity: .5 }}></View>
+      </View>
+
+      <View style={[homeStyles.content, { paddingTop: RFPercentage(2) }]}>
         <Text style={homeStyles.content.title}>{t('home.titles.more.main')}</Text>
+        <Text style={homeStyles.content.subtitle}>{t('home.titles.more.sub')}</Text>
+
+        <View style={{ marginTop: RFPercentage(2) }}>
+          <TouchableOpacity style={{ marginTop: RFPercentage(1) }}>
+            <Text style={homeStyles.content.link}>{t('home.titles.more.links.iqa')}</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={{ marginTop: RFPercentage(1) }}>
+            <Text style={homeStyles.content.link}>{t('home.titles.more.links.airQuality')}</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={{ marginTop: RFPercentage(1) }}>
+            <Text style={homeStyles.content.link}>{t('home.titles.more.links.data')}</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   )
