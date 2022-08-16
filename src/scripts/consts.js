@@ -28,3 +28,7 @@ export const weatherIcons = {
   '13d': require('../../assets/img/icons/13d.png'),
   '50d': require('../../assets/img/icons/50d.png'),
 }
+
+export const capitalizeFirstLetter = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}

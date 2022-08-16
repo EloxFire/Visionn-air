@@ -7,8 +7,9 @@ import { useTranslation } from 'react-i18next'
 import AirQualityCard from '../components/AirQualityCard'
 import axios from 'axios'
 import WeatherCard from '../components/WeatherCard'
-import { colors } from '../scripts/consts'
+import { capitalizeFirstLetter, colors } from '../scripts/consts'
 import { RFPercentage } from 'react-native-responsive-fontsize'
+import moment from 'moment'
 
 export default function Home({ navigation }) {
 
@@ -23,9 +24,13 @@ export default function Home({ navigation }) {
   const [currentWindSpeed, setCurrentWindSpeed] = useState(0);
   const [currentWindDirection, setCurrentWindDirection] = useState(0);
   const [weatherIcon, setWeatherIcon] = useState('01d');
+  const [fetchTime, setFetchTime] = useState(new Date());
+  const [dataFetched, setDataFetched] = useState(false);
 
   useEffect(() => {
-    getData()
+    if (!dataFetched) {
+      getData()
+    }
   }, []);
 
   const getData = async () => {
@@ -41,6 +46,8 @@ export default function Home({ navigation }) {
         setCurrentWindSpeed(response.data.data.current.weather.ws);
         setCurrentWindDirection(getCardinalDirection(response.data.data.current.weather.wd));
         setWeatherIcon(response.data.data.current.weather.ic);
+        setFetchTime(new Date());
+        setDataFetched(true);
       }).catch((error) => {
         console.log(error.message);
       })
@@ -64,13 +71,13 @@ export default function Home({ navigation }) {
       <PageHeader title="VISIONN'AIR" subtitle="Visualisez l'état de l'environnement" />
       <View style={homeStyles.content}>
         <Text style={homeStyles.content.title}>{t('home.titles.airQuality.main')}</Text>
-        <Text style={homeStyles.content.subtitle}>{city === "" ? <ActivityIndicator size="small" color={colors.white} /> : t('home.titles.airQuality.sub', { city: city })}</Text>
+        <Text style={homeStyles.content.subtitle}>{city === "" ? <ActivityIndicator size="small" color={colors.white} /> : t('home.titles.airQuality.sub', { city: city, time: capitalizeFirstLetter(moment().fromNow(fetchTime)) })}</Text>
         <AirQualityCard iqa={iqa} main_polluent_name={mpName} />
       </View>
 
       <View style={homeStyles.content}>
         <Text style={homeStyles.content.title}>{t('home.titles.weather.main')}</Text>
-        <Text style={homeStyles.content.subtitle}>{city === "" ? <ActivityIndicator size="small" color={colors.white} /> : t('home.titles.airQuality.sub', { city: city })}</Text>
+        <Text style={homeStyles.content.subtitle}>{city === "" ? <ActivityIndicator size="small" color={colors.white} /> : t('home.titles.airQuality.sub', { city: city, time: capitalizeFirstLetter(moment().fromNow(fetchTime)) })}</Text>
         <WeatherCard
           temp={currentTemp}
           pressure={currentPressure}

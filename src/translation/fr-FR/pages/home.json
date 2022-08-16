@@ -3,11 +3,11 @@
     "titles": {
       "airQuality": {
         "main": "Qualité de l'air",
-        "sub": "À l'instant | {{city}}"
+        "sub": "{{time}} | {{city}}"
       },
       "weather": {
         "main": "Conditions météo",
-        "sub": "À l'instant | {{city}}"
+        "sub": "{{time}} | {{city}}"
       },
       "more": {
         "main": "En savoir plus",

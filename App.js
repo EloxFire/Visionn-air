@@ -1,12 +1,14 @@
 import React, { Fragment, useEffect } from 'react'
 import { StatusBar } from 'expo-status-bar'
 import { NavigationContainer } from '@react-navigation/native'
-import { useFonts } from 'expo-font';
-import * as SystemUI from 'expo-system-ui';
-import * as ScreenOrientation from 'expo-screen-orientation';
-import NavigationStack from './src/components/navigation/StackNavigation';
-import { colors } from './src/scripts/consts';
+import { useFonts } from 'expo-font'
+import * as SystemUI from 'expo-system-ui'
+import * as ScreenOrientation from 'expo-screen-orientation'
+import NavigationStack from './src/components/navigation/StackNavigation'
+import { colors } from './src/scripts/consts'
 import './src/translation/i18n'
+import 'moment'
+import 'moment/locale/fr'
 
 export default function App() {
 
