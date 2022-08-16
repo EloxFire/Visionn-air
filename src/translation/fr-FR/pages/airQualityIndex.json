@@ -1,0 +1,10 @@
+{
+  "airQualityIndex": {
+    "title": "Indice de Qualité de l'Air (IQA)",
+    "paragraphs": [
+      "Un indice de la qualité de l'air est une mesure de la qualité de l'air, permettant de synthétiser différentes données sous la forme d'une valeur unique.",
+      "Il existe principalement deux indices de qualité d'air en France, différents selon la taille de l'agglomération :\n- l'indice ATMO\n- l'indice IQA",
+      "Ces deux indices diffèrent de par leur utilisation : \n- l'indice ATMO est utilisé pour mesurer la qualité de l'air dans des agglomérations de plus de 100 000 habitants. Il comprends plus de paramètres.\n- l'indice IQA est utilisé pour mesurer la qualité de l'air dans des agglomérations de moins de 100 000 habitants. C'est un indice simplifié."
+    ]
+  }
+}

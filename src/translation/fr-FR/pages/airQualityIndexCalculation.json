@@ -1,0 +1,20 @@
+{
+  "airQualityIndexCalculation": {
+    "title": "Calcul de l'IQA (et ATMO)",
+    "paragraphs": [
+      "Le calcul de la qualité de l'air est basé sur les indicateurs de pollution suivants : ",
+      "- Concentration d'O3 (Ozone 3)",
+      "- Concentration de PM10 (Particules en suspension inférieures à 10 micromètres)",
+      "- Concentration de PM2.5 (Particules en suspension inférieures à 2.5 micromètres)",
+      "- Concentration de SO2 (Dioxyde de soufre)",
+      "- Concentration de NO2 (Dioxyde d'azote)",
+      "Un système de qualificatifs et de codes couleur est associé à chacun des sous-indices :",
+      "- Bon = Vert",
+      "- Moyen = Jaune",
+      "- Mauvais pour les groupes sensibles = Orange",
+      "- Mauvais = Rouge",
+      "- Très mauvais = Magenta",
+      "- Dangereux = Pourpre"
+    ]
+  }
+}

@@ -1,9 +1,9 @@
 import React from 'react'
-import { View, Text, ActivityIndicator, TouchableOpacity } from 'react-native'
+import { View, Text, ActivityIndicator, TouchableOpacity, ScrollView } from 'react-native'
 import PageHeader from '../components/PageHeader'
 import { commonStyles } from '../styles/commonStyles'
-import { homeStyles } from '../styles/pages/home'
 import { useTranslation } from 'react-i18next'
+import { airQualityIndexStyles } from '../styles/pages/airQualityIndex'
 
 export default function AirQualityIndex({ navigation }) {
 
@@ -12,9 +12,16 @@ export default function AirQualityIndex({ navigation }) {
   return (
     <View style={commonStyles.view}>
       <PageHeader title="VISIONN'AIR" subtitle="Visualisez l'état de l'environnement" />
-      <View style={homeStyles.content}>
-        <Text style={homeStyles.content.title}>{t('airQualityIndex.title')}</Text>
-        <Text style={homeStyles.content.subtitle}>Test</Text>
+      <Text style={airQualityIndexStyles.title}>{t('airQualityIndex.title')}</Text>
+      <ScrollView style={airQualityIndexStyles.content}>
+        <Text style={airQualityIndexStyles.content.text}>{t('airQualityIndex.paragraphs.0')}</Text>
+        <Text style={airQualityIndexStyles.content.text}>{t('airQualityIndex.paragraphs.1')}</Text>
+        <Text style={airQualityIndexStyles.content.text}>{t('airQualityIndex.paragraphs.2')}</Text>
+      </ScrollView>
+      <View style={airQualityIndexStyles.footer}>
+        <TouchableOpacity style={airQualityIndexStyles.footer.button} onPress={() => navigation.goBack()}>
+          <Text style={airQualityIndexStyles.footer.button.text}>Retour à l'accueil</Text>
+        </TouchableOpacity>
       </View>
     </View>
   )

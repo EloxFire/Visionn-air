@@ -2,6 +2,7 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from '../../pages/Home';
 import AirQualityIndex from '../../pages/AirQualityIndex';
+import AirQualityIndexCalculation from '../../pages/AirQualityIndexCalculation';
 
 const Stack = createNativeStackNavigator();
 
@@ -12,6 +13,7 @@ export default function NavigationStack() {
     }}>
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="IQA" component={AirQualityIndex} />
+      <Stack.Screen name="IQACalculation" component={AirQualityIndexCalculation} />
     </Stack.Navigator>
   )
 }

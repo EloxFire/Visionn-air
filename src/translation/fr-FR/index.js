@@ -1,8 +1,8 @@
 import { componentsTranslation } from './components';
-import { homeTranslation } from './home/';
+import { pagesTranslation } from './pages/';
 
 let frTranslation = Object.assign({},
-  homeTranslation,
+  pagesTranslation,
   componentsTranslation,
 );
 
