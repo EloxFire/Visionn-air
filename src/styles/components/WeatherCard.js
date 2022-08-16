@@ -20,8 +20,8 @@ export const weatherCardStyles = {
 
     icon: {
       marginTop: RFPercentage(2.5),
-      width: RFPercentage(5.5),
-      height: RFPercentage(5.5),
+      width: RFPercentage(8),
+      height: RFPercentage(8),
     },
 
     number: {
