@@ -132,9 +132,9 @@ export default function Home({ navigation }) {
           <TouchableOpacity onPress={() => navigation.navigate('IQACalculation')} style={{ marginTop: RFPercentage(1) }}>
             <Text style={homeStyles.content.link}>{t('home.titles.more.links.airQuality')}</Text>
           </TouchableOpacity>
-          {/* <TouchableOpacity style={{ marginTop: RFPercentage(1) }}>
+          <TouchableOpacity onPress={() => navigation.navigate('FrequencyUpdate')} style={{ marginTop: RFPercentage(1) }}>
             <Text style={homeStyles.content.link}>{t('home.titles.more.links.data')}</Text>
-          </TouchableOpacity> */}
+          </TouchableOpacity>
         </View>
       </View>
     </View>
