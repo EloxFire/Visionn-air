@@ -1,15 +1,17 @@
+import 'dotenv/config';
+
 export default {
   "name": "visionn-air",
   "slug": "visionn-air",
   "owner": "eloxfire",
-  "version": "1.0.0",
+  "version": process.env.REACT_APP_VERSION,
   "orientation": "portrait",
   "icon": "./assets/icon.png",
   "userInterfaceStyle": "light",
   "splash": {
     "image": "./assets/splash.png",
     "resizeMode": "contain",
-    "backgroundColor": "#ffffff"
+    "backgroundColor": "#034732"
   },
   "updates": {
     "fallbackToCacheTimeout": 0
@@ -27,7 +29,7 @@ export default {
       "backgroundColor": "#FFFFFF"
     },
     "package": "fr.eloxfire.visionnair",
-    "versionCode": 1
+    "versionCode": parseInt(process.env.REACT_APP_VERSION_CODE)
   },
   "web": {
     "favicon": "./assets/favicon.png"
