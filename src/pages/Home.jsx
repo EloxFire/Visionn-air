@@ -9,6 +9,7 @@ import axios from 'axios'
 import WeatherCard from '../components/WeatherCard'
 import { capitalizeFirstLetter, colors } from '../scripts/consts'
 import { RFPercentage } from 'react-native-responsive-fontsize'
+import * as Location from 'expo-location';
 import moment from 'moment'
 
 export default function Home({ navigation }) {
@@ -26,31 +27,57 @@ export default function Home({ navigation }) {
   const [weatherIcon, setWeatherIcon] = useState('01d');
   const [fetchTime, setFetchTime] = useState(new Date());
   const [dataFetched, setDataFetched] = useState(false);
+  const [location, setLocation] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     if (!dataFetched) {
       getData()
     }
+  }, [location]);
+
+  useEffect(() => {
+    (async () => {
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        setErrorMsg('Permission to access location was denied');
+        return;
+      }
+
+      let location = await Location.getCurrentPositionAsync({});
+      setLocation(location);
+    })();
   }, []);
 
   const getData = async () => {
-    console.log("Getting data...");
-    axios.get('http://api.airvisual.com/v2/nearest_city?key=c252ce21-327b-4c8a-977a-4c197fb5e4a4')
-      .then((response) => {
-        setIqa(response.data.data.current.pollution.aqius);
-        setMpName(response.data.data.current.pollution.mainus);
-        setCity(response.data.data.city);
-        setCurrentTemp(response.data.data.current.weather.tp);
-        setCurrentPressure(response.data.data.current.weather.pr);
-        setCurrentHumidity(response.data.data.current.weather.hu);
-        setCurrentWindSpeed(response.data.data.current.weather.ws);
-        setCurrentWindDirection(getCardinalDirection(response.data.data.current.weather.wd));
-        setWeatherIcon(response.data.data.current.weather.ic);
-        setFetchTime(new Date());
-        setDataFetched(true);
-      }).catch((error) => {
-        console.log(error.message);
-      })
+    // console.log("Location :", location);
+    if (location !== null) {
+      console.log("LAT :", location.coords.latitude);
+      console.log("LON :", location.coords.longitude);
+      console.log("Getting data...");
+      axios.get(`http://api.airvisual.com/v2/nearest_city?lat=${location.coords.latitude}&lon=${location.coords.longitude}&key=c252ce21-327b-4c8a-977a-4c197fb5e4a4`)
+        .then((response) => {
+          setIqa(response.data.data.current.pollution.aqius);
+          setMpName(response.data.data.current.pollution.mainus);
+          setCity(response.data.data.city);
+          setCurrentTemp(response.data.data.current.weather.tp);
+          setCurrentPressure(response.data.data.current.weather.pr);
+          setCurrentHumidity(response.data.data.current.weather.hu);
+          setCurrentWindSpeed(response.data.data.current.weather.ws);
+          setCurrentWindDirection(getCardinalDirection(response.data.data.current.weather.wd));
+          setWeatherIcon(response.data.data.current.weather.ic);
+          setFetchTime(new Date());
+          setDataFetched(true);
+          setLoading(false);
+        }).catch((error) => {
+          console.log(error.message);
+          setLoading(false);
+          setError(true);
+        })
+    } else {
+
+    }
   }
 
   const getCardinalDirection = (angle) => {
@@ -72,13 +99,15 @@ export default function Home({ navigation }) {
       <View style={homeStyles.content}>
         <Text style={homeStyles.content.title}>{t('home.titles.airQuality.main')}</Text>
         <Text style={homeStyles.content.subtitle}>{city === "" ? <ActivityIndicator size="small" color={colors.white} /> : t('home.titles.airQuality.sub', { city: city, time: capitalizeFirstLetter(moment().fromNow(fetchTime)) })}</Text>
-        <AirQualityCard iqa={iqa} main_polluent_name={mpName} />
+        <AirQualityCard loading={loading} error={error} iqa={iqa} main_polluent_name={mpName} />
       </View>
 
       <View style={homeStyles.content}>
         <Text style={homeStyles.content.title}>{t('home.titles.weather.main')}</Text>
         <Text style={homeStyles.content.subtitle}>{city === "" ? <ActivityIndicator size="small" color={colors.white} /> : t('home.titles.airQuality.sub', { city: city, time: capitalizeFirstLetter(moment().fromNow(fetchTime)) })}</Text>
         <WeatherCard
+          loading={loading}
+          error={error}
           temp={currentTemp}
           pressure={currentPressure}
           humidity={currentHumidity}
@@ -103,9 +132,9 @@ export default function Home({ navigation }) {
           <TouchableOpacity onPress={() => navigation.navigate('IQACalculation')} style={{ marginTop: RFPercentage(1) }}>
             <Text style={homeStyles.content.link}>{t('home.titles.more.links.airQuality')}</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={{ marginTop: RFPercentage(1) }}>
+          {/* <TouchableOpacity style={{ marginTop: RFPercentage(1) }}>
             <Text style={homeStyles.content.link}>{t('home.titles.more.links.data')}</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
       </View>
     </View>
