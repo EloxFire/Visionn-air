@@ -4,7 +4,7 @@ export default {
   "name": "Visionn'air",
   "slug": "visionn-air",
   "owner": "eloxfire",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "orientation": "portrait",
   "icon": "./assets/icon.png",
   "userInterfaceStyle": "light",
@@ -29,7 +29,7 @@ export default {
       "backgroundColor": "#034732"
     },
     "package": "fr.eloxfire.visionnair",
-    "versionCode": 2
+    "versionCode": 3
   },
   "web": {
     "favicon": "./assets/favicon.png"
