@@ -1,10 +1,10 @@
 import 'dotenv/config';
 
 export default {
-  "name": "visionn-air",
+  "name": "Visionn'air",
   "slug": "visionn-air",
   "owner": "eloxfire",
-  "version": process.env.REACT_APP_VERSION,
+  "version": "1.1.0",
   "orientation": "portrait",
   "icon": "./assets/icon.png",
   "userInterfaceStyle": "light",
@@ -26,10 +26,10 @@ export default {
   "android": {
     "adaptiveIcon": {
       "foregroundImage": "./assets/adaptive-icon.png",
-      "backgroundColor": "#FFFFFF"
+      "backgroundColor": "#034732"
     },
     "package": "fr.eloxfire.visionnair",
-    "versionCode": parseInt(process.env.REACT_APP_VERSION_CODE)
+    "versionCode": 2
   },
   "web": {
     "favicon": "./assets/favicon.png"
