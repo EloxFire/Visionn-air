@@ -11,7 +11,7 @@ export default function UpdateFrequency({ navigation }) {
 
   return (
     <View style={commonStyles.view}>
-      <PageHeader title="VISIONN'AIR" subtitle="Visualisez l'état de votre l'environnement" />
+      <PageHeader title={t('home.app.title')} subtitle={t('home.app.catchPhrase')} />
       <Text style={airQualityIndexStyles.title}>{t('frequencyUpdate.title')}</Text>
       <ScrollView style={airQualityIndexStyles.content}>
         <Text style={airQualityIndexStyles.content.text}>{t('frequencyUpdate.paragraphs.0')}</Text>

@@ -95,7 +95,7 @@ export default function Home({ navigation }) {
 
   return (
     <View style={commonStyles.view}>
-      <PageHeader title="VISIONN'AIR" subtitle="Visualisez l'état de l'environnement" />
+      <PageHeader title={t('home.app.title')} subtitle={t('home.app.catchPhrase')} />
       <View style={homeStyles.content}>
         <Text style={homeStyles.content.title}>{t('home.titles.airQuality.main')}</Text>
         <Text style={homeStyles.content.subtitle}>{city === "" ? <ActivityIndicator size="small" color={colors.white} /> : t('home.titles.airQuality.sub', { city: city, time: capitalizeFirstLetter(moment().fromNow(fetchTime)) })}</Text>

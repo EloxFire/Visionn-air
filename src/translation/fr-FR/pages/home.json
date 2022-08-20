@@ -1,5 +1,9 @@
 {
   "home": {
+    "app": {
+      "title": "Visionn'air",
+      "catchPhrase": "Visualisez l'état de votre environnement",
+    },
     "titles": {
       "airQuality": {
         "main": "Qualité de l'air",

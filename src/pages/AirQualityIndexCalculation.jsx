@@ -11,7 +11,7 @@ export default function AirQualityIndexCalculation({ navigation }) {
 
   return (
     <View style={commonStyles.view}>
-      <PageHeader title="VISIONN'AIR" subtitle="Visualisez l'état de l'environnement" />
+      <PageHeader title={t('home.app.title')} subtitle={t('home.app.catchPhrase')} />
       <Text style={airQualityIndexStyles.title}>{t('airQualityIndexCalculation.title')}</Text>
       <ScrollView style={airQualityIndexStyles.content}>
         <Text style={airQualityIndexStyles.content.text}>{t('airQualityIndexCalculation.paragraphs.0')}</Text>

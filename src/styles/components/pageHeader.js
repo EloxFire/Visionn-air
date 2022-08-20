@@ -13,11 +13,12 @@ export const pageHeaderStyles = {
     title: {
       fontSize: RFPercentage(4),
       color: colors.white,
-      fontFamily: 'GilroyBold'
+      fontFamily: 'GilroyBold',
+      textTransform: 'uppercase',
     },
 
     subtitle: {
-      fontSize: RFPercentage(1.5),
+      fontSize: RFPercentage(1.4),
       color: colors.white,
       fontFamily: 'Gilroy'
     },
