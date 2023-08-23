@@ -56,7 +56,7 @@ export default function Home({ navigation }) {
       console.log("LAT :", location.coords.latitude);
       console.log("LON :", location.coords.longitude);
       console.log("Getting data...");
-      axios.get(`http://api.airvisual.com/v2/nearest_city?lat=${location.coords.latitude}&lon=${location.coords.longitude}&key=c252ce21-327b-4c8a-977a-4c197fb5e4a4`)
+      axios.get(`http://api.airvisual.com/v2/nearest_city?lat=${location.coords.latitude}&lon=${location.coords.longitude}&key=da579a97-22ae-4ca6-80df-4aac9a9ef032`)
         .then((response) => {
           setIqa(response.data.data.current.pollution.aqius);
           setMpName(response.data.data.current.pollution.mainus);
